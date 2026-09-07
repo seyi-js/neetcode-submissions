@@ -1,0 +1,23 @@
+class Solution {
+    /**
+     * @param {number[]} prices
+     * @return {number}
+     */
+    maxProfit(prices: number[]): number {
+        let maxProfit = 0;
+
+        for (let i = 0; i < prices.length; i++) {
+           
+            for (let j = i; j >= 0; j--) {
+                
+                const profit = prices[i] - prices[j];
+               
+                if (profit > maxProfit) {
+                    maxProfit = profit;
+                }
+            }
+        }
+
+        return maxProfit;
+    }
+}
